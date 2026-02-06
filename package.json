@@ -8,8 +8,7 @@
   "main": "App.js",
   "scripts": {
   "start": "node App.js",
-  "build": "npx tailwindcss -i ./src/input.css -o ./public/styles/output.css"  
-  },
+  "build": "npx tailwindcss -i ./public/styles/input.css -o ./public/styles/output.css"  },
 
 
   "devDependencies": {
