@@ -42,7 +42,7 @@ exports.postForgotPassword=async (req,res,next)=>{
 
         const forgotEmail = {
             to: email,
-            from: `Airbnb Clone ${process.env.FROM_EMAIL}`,
+            from: `Airbnb Clone ${process.env.FROM_EMAIL}`, 
             subject: 'Here is your OTP to reset your Password',
             html: `<h1> OTP is: ${otp}</h1>
             <p> Enter this OTP on <a href="http://localhost:3002/reset-password?email=${email}">Reset Password</a> page. </p>
