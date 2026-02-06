@@ -28,6 +28,7 @@ const mongodb_session = require("connect-mongodb-session");
 // const mongodb_url = `mongodb://127.0.0.1:27017/${process.env.MONGO_DB_DATABASE}`; 
 // const mongodb_url = `mongodb+srv://${process.env.MONGO_DB_USERNAME}:${process.env.MONGO_DB_PASSWORD}@cluster0.xxbwcxp.mongodb.net/${process.env.MONGO_DB_DATABASE}?retryWrites=true&w=majority`;
 
+const mongodb_url=process.env.MONGO_DB_URL;
 
 const loggingPath=path.join(rootDir,'access.log');
 
@@ -128,7 +129,7 @@ app.use(errorController.get404);
 const PORT = process.env.PORT || 8080;
 
 
-mongoose.connect(process.env.MONGO_DB_URL)
+mongoose.connect(mongodb_url)
   .then(() => {
     app.listen(PORT, () => {
       console.log(`Server running on port ${PORT}`);
